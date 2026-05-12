@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta name="description" content="گالری تصاویر سید حسن ثاقبی عکس ها">
+    <style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* دو ستون پیش‌فرض */
+    gap: 20px;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .img-caption {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  /* فقط برای موبایل: یک ستون */
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" https-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>تصاویر من</title>
+  <link href="assets/images/favicon.svg" rel="shortcut icon" type="image/x-icon" />
+  <link href="assets/css/vendor/fontawesome.css" rel="stylesheet" />
+  <link href="assets/css/plugins/swiper.rtl.css" rel="stylesheet" />
+  <link href="assets/css/plugins/odometer.rtl.css" rel="stylesheet" />
+  <link href="assets/css/vendor/animate.min.css" rel="stylesheet" />
+  <link href="assets/css/vendor/bootstrap.min.rtl.css" rel="stylesheet" />
+  <link href="assets/css/style.rtl.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #000;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+
+    .my-gallery-section {
+      padding: 60px 20px;
+      margin: 80px 0;
+      border-top: 1px solid #550000;
+      border-bottom: 1px solid #550000;
+      background-color: #000;
+      text-align: center;
+    }
+
+    .my-gallery-section h1 {
+      color: #e50914;
+      margin: 80px 0 40px 0;
+      font-size: 32px;
+    }
+
+    .my-gallery-section h2 {
+      color: #e50914;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .img-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .horizontal .img-container img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+    }
+
+    .vertical .img-container img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      background-color: #111;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+    }
+
+    .img-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      transform: translateY(100%);
+      opacity: 0;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .img-container:hover .img-caption {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .img-container:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.7);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      border: 4px solid #e50914;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: #e50914;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .close:hover {
+      color: #ff4c4c;
+    }
+  </style>
+</head>
+<body class="color-primary-2nd">
+<!-- Header -->
+  <header class="tmp-header-area-start header-one header--sticky header--transparent">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="header-content">
+            <div class="logo">
+              <a href="index-fa.html">
+                <img class="logo-dark" src="assets/images/logo/white-logo-reeni-2.png" alt="لوگو" />
+                <img class="logo-white" src="assets/images/logo/logo-white.png" alt="لوگو سفید" />
+</a>
+            </div>
+            <nav class="tmp-mainmenu-nav d-none d-xl-block">
+              <ul class="tmp-mainmenu">
+                <li><a href="index.html">English</a></li>
+                <li><a href="index-fa.html">خانه</a></li>
+                <li><a href="Gallery.html">تصاویر من</a></li>
+              </ul>
+            </nav>
+            <div class="tmp-header-right">
+              <div class="social-share-wrapper d-none d-md-block">
+                <div class="social-link">
+                  <a href="https://instagram.com/bluestar110h"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://t.me/bluestar110h"><i class="fa-brands fa-telegram"></i></a>
+                  <a href="https://wa.me/989151042127"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://eitaa.com/bluestar110h"><i class="fa-brands fa-discord"></i></a>
+                  <a href="mailto:hassan.saghebi@gmail.com"><i class="fa-brands fa-google"></i></a>
+                  <a href="tel:+989151042127"><i class="fa-solid fa-phone"></i></a>
+                </div>
+              </div>
+              <div class="actions-area">
+                <div class="tmp-side-collups-area d-none d-xl-block">
+                  <button class="tmp-menu-bars tmp_button_active"><i class="fa-regular fa-bars-staggered"></i></button>
+                </div>
+                <div class="tmp-side-collups-area d-block d-xl-none">
+                  <button class="tmp-menu-bars humberger_menu_active"><i class="fa-regular fa-bars-staggered"></i></button>
+                </div>
+              </div>
+            </div>
+          </div> <!-- header-content -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- گالری -->
+  <section class="my-gallery-section">
+    <h1>گزیده ای تصاویر سفرها و تجربیات سید حسن ثاقبی</h1>
+
+    <div class="gallery horizontal">
+      <div class="img-container">
+        <img src="photos/Me01.jpg" alt="Me Horizontal 01">
+        <div class="img-caption">نمایشگاه بین المللی صنعت و ساختمان - پرلیکا</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me02.jpg" alt="Me Horizontal 02">
+        <div class="img-caption">نمایشگاه کنتن در گوانجو - چین</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me03.jpg" alt="Me Horizontal 03">
+        <div class="img-caption">نمایشگاه بین المللی بازرگانی تهران</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me11.jpg" alt="Me Horizontal 04">
+        <div class="img-caption">کارخانه ماشین آلات فنچو در ووهان چین</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me17.jpg" alt="Me Horizontal 05">
+        <div class="img-caption">بازدید از واتیکان در رم - ایتالیا</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me19.jpg" alt="Me Horizontal 06">
+        <div class="img-caption">کارخانه ماشین آلات برس سازی یانگژو - چین</div>
+      </div>
+    </div>
+
+        <h2>  </h2>
+    <div class="gallery vertical">
+      <div class="img-container">
+        <img src="photos/Me04.jpg" alt="Me Vertical 01">
+        <div class="img-caption">خرید قطعات خودرو در چانگچون - چین</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me05.jpg" alt="Me Vertical 02">
+        <div class="img-caption">بازرسی کالا در چین هنگام بارگیری</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me06.jpg" alt="Me Vertical 03">
+        <div class="img-caption">بازدید از واتیکان رم - ایتالیا</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me07.jpg" alt="Me Vertical 04">
+        <div class="img-caption">برج ایفل - پاریس - فرانسه</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me08.jpg" alt="Me Vertical 05">
+        <div class="img-caption">کروز داخلی اروپا</div>
+      </div>
+      <div class="img-container">
+<img src="photos/Me09.jpg" alt="Me Vertical 06">
+        <div class="img-caption">قصر نواب شهر لاکنو - هند</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me10.jpg" alt="Me Vertical 07">
+        <div class="img-caption">بازارگردی در چین</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me12.jpg" alt="Me Vertical 08">
+        <div class="img-caption">نمایی از نیویورک - آمریکا</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me13.jpg" alt="Me Vertical 09">
+        <div class="img-caption">مجلس سنا در واشنگتن - آمریکا</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me14.jpg" alt="Me Vertical 10">
+        <div class="img-caption">مسجد ایاصوفیه - استانبول</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me15.jpg" alt="Me Vertical 11">
+        <div class="img-caption">آسیاب های بادی هلند</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me16.jpg" alt="Me Vertical 12">
+        <div class="img-caption">آسیاب بادی در آمستردام - هلند</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me18.jpg" alt="Me Vertical 13">
+        <div class="img-caption">کاخ سردار انگلیسی در کلکته - هند</div>
+      </div>
+      <div class="img-container">
+        <img src="photos/Me20.jpg" alt="Me Vertical 14">
+        <div class="img-caption">قطارهای سریع چین</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- لایت‌باکس -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const images = document.querySelectorAll('.gallery img');
+    const close = document.querySelector('.close');
+    
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'block';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    close.onclick = () => lightbox.style.display = 'none';
+
+    window.onclick = e => {
+      if (e.target === lightbox) lightbox.style.display = 'none';
+    };
+  </script>
+</body>
+</html>
+
+
+</html>
+    </div>
+    </header>
+    <div class="d-none d-xl-block">
+      <div class="tmp-sidebar-area tmp_side_bar">
+        <div class="inner">
+          <div class="top-area">
+            <a class="logo" href="index.html"> <img alt="سید حسن ثاقبی - متخصص تجارت و توریسم" class="logo-dark" src="assets/images/logo/white-logo-reeni.png"/> <img alt="Reeni - Personal Portfolio HTML Template for developers and freelancers" class="logo-white" src="assets/images/logo/logo-white.png"/> </a> 
+            <div class="close-icon-area"> <button class="tmp-round-action-btn close_side_menu_active"> <i class="fa-sharp fa-light fa-xmark"></i> </button> </div>
+          </div>
+          <div class="content-wrapper">
+            <div class="image-area-feature"> <a href="index.html"> <img alt="personal-logo" src="assets/images/logo/man.png"/> </a> </div>
+            <h5 class="title mt--30">سید حسن ثاقبی <br>متخصص و کارشناس بازرگانی و توریسم</h5>
+            <p class="disc">بازرگان بین المللی تأمین کالا از سراسر نقاط جهان، کارشناس گردشگری، مدیریت تیمی و استراتژیک، مسلط به زبان های مختلف، معتبر و متعهد</p>
+            <div class="short-contact-area">
+              <div class="single-contact">
+                <i class="fa-solid fa-phone"></i> 
+                <div class="information tmp-link-animation"> <span>ابا من تماس بگیرید</span> <a class="number" href="tel:+989151042127">09151042127</a> </div>
+              </div>
+              <div class="single-contact">
+                <i class="fa-solid fa-envelope"></i> 
+                <div class="information tmp-link-animation"> <span>ایمیل ارسال کنید</span> <a class="number" href="mailto:hassan.saghebi@gmail.com?subject=Contact%20Request&body=Hello%20Hassan">Hassan.Saghebi@Gmail.com</a> </div>
+              </div>
+              <div class="single-contact">
+                <i class="fa-solid fa-location-crosshairs"></i> 
+                <div class="information tmp-link-animation"> <span>آدرس من</span> <span class="number">ایران، شهر مشهد</span> </div>
+              </div>
+            </div>
+            <div class="social-wrapper mt--20">
+              <span class="subtitle">شبکه های اجتماعی</span> 
+              <div class="social-link"> <a href="https://instagram.com/bluestar110h"><i class="fa-brands fa-instagram"></i></a> <a href="https://t.me/bluestar110h"><i class="fa-brands fa-telegram"></i></a> <a href="https://wa.me/989151042127"><i class="fa-brands fa-whatsapp"></i></a> <a href="https://eitaa.com/bluestar110h"><i class="fa-brands fa-discord"></i></a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="overlay_close_side_menu close_side_menu_active" href="javascript:void(0);"></a> 
+    </div>
+    <div class="d-block d-xl-none">
+      <div class="tmp-popup-mobile-menu">
+        <div class="inner">
+          <div class="header-top">
+            <div class="logo"> <a class="logo-area" href="index.html"> <img alt="سید حسن ثاقبی - متخصص بازرگانی و توریسم" class="logo-dark" src="assets/images/logo/white-logo-reeni.png"/> <img alt="سید حسن ثاقبی - متخصص بازرگانی و توریسم" class="logo-white" src="assets/images/logo/logo-white.png"/> </a> </div>
+            <div class="close-menu"> <button class="close-button tmp-round-action-btn"> <i class="fa-sharp fa-light fa-xmark"></i> </button> </div>
+          </div>
+          <ul class="tmp-mainmenu">
+            <li> <a href="index.html">English</a> </li>
+            <li> <a href="index-fa.html">خانه</a> </li>
+            <li> <a href="Gallery.html">گالری من</a> </li>
+          </ul>
+          <div class="social-wrapper mt--40">
+            <span class="subtitle">ارتباط با من</span> 
+            <div class="social-link"> <a href="https://instagram.com/bluestar110h"><i class="fa-brands fa-instagram"></i></a> <a href="https://t.me/bluestar110h"><i class="fa-brands fa-telegram"></i></a> <a href="https://wa.me/989151042127"><i class="fa-brands fa-whatsapp"></i></a> <a href="https://eitaa.com/bluestar110h"><i class="fa-brands fa-discord"></i></a> <a href="mailto:hassan.saghebi@gmail.com?subject=Contact%20Request&body=Hello%20Hassan"><i class="fa-brands fa-google"></i></a> <a href="tel:+989151042127"><i class="fa-solid fa-phone"></i></a> </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    </div>
+    </section>
+    <footer class="footer-area footer-style-one-wrapper tmp-section-gap">
+      <div class="container">
+        <div class="footer-main footer-style-one">
+          <div class="row g-5">
+            <div class="col-lg-5 col-md-6">
+              <div class="single-footer-wrapper border-right mr--20">
+                <div class="logo"> <a href="index.html"> <img alt="Reeni - Personal Portfolio HTML Template for developers and freelancers" src="assets/images/logo/white-logo-reeni-2.png"/> </a> </div>
+                <p class="description"><span> همکاری با ما </span><br/>پلی به سوی</span><br/>فردایی روشن تر</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="single-footer-wrapper quick-link-wrap">
+                <h5 class="ft-title"> </h5>
+                <ul class="ft-link tmp-link-animation">
+                  <li> <a href="#"> </a> </li>
+                  <li> <a href="#"> </a> </li>
+                  <li> <a href="#"> </a> </li>
+                  <li> <a href="#"> </a> </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="single-footer-wrapper contact-wrap">
+                <h5 class="ft-title">تماس</h5>
+                <ul class="ft-link tmp-link-animation">
+                  <li><span class="ft-icon"><i class="fa-solid fa-envelope"></i></span><a href="mailto:hassan.saghebi@gmail.com">Hassan.Saghebi@Gmail.com</a></li>
+                  <li><span class="ft-icon"><i class="fa-solid fa-location-dot"></i></span>کشور ایران، شهر مشهد</li>
+                  <li><span class="ft-icon"><i class="fa-solid fa-phone"></i></span><a href="tel:+989151042127">989151042127+</a></li>
+                </ul>
+                <div class="social-link footer"> <a href="https://instagram.com/bluestar110h"><i class="fa-brands fa-instagram"></i></a> <a href="https://t.me/bluestar110h"><i class="fa-brands fa-telegram"></i></a> <a href="https://wa.me/989151042127"><i class="fa-brands fa-whatsapp"></i></a> <a href="https://eitaa.com/bluestar110h"><i class="fa-brands fa-discord"></i></a> <a href="mailto:hassan.saghebi@gmail.com?subject=Contact%20Request&body=Hello%20Hassan"><i class="fa-brands fa-google"></i></a>  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bg-img"> <img alt="footer-img" src="assets/images/footer/footer-bg-img.png"/> </div>
+    </footer>
+    <div class="copyright-area-one">
+      <div class="container">
+        <div class="row">
+<div class="col-lg-12">
+            <div class="main-wrapper">
+              <p class="copy-right-para">
+                © SHS<script> document.write(new Date().getFullYear()) </script> | کلیه حقوق محفوظ است
+              </p>
+              <ul>
+                <li><a href="contact.html">با ما تماس بگیرید</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scrollToTop" style="display: block;">
+      <div class="arrowUp"> <i class="fa-light fa-arrow-up"></i> </div>
+      <div class="water" style="transform: translate(0px, 87%);">
+        <svg class="water_wave water_wave_back" viewbox="0 0 560 20">
+          <use xlink:href="#wave"></use>
+        </svg>
+        <svg class="water_wave water_wave_front" viewbox="0 0 560 20">
+          <use xlink:href="#wave"></use>
+        </svg>
+        <svg style="display: none;" version="1.1" viewbox="0 0 560 20" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+          <symbol id="wave">
+            <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z" fill="#FF014F"></path>
+            <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z" fill="#FF014F"></path>
+            <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z" fill="#FF014F"></path>
+            <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z" fill="#FF014F"></path>
+          </symbol>
+        </svg>
+      </div>
+    </div>
+    
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/jquery-ui.min.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+    <script src="assets/js/plugins/odometer.js"></script>
+    <script src="assets/js/vendor/appear.js"></script>
+    <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
+    <script src="assets/js/plugins/gsap.js"></script>
+    <script src="assets/js/plugins/splittext.js"></script>
+    <script src="assets/js/plugins/scrolltigger.js"></script>
+    <script src="assets/js/plugins/scrolltoplugins.js"></script>
+    <script src="assets/js/plugins/smoothscroll.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/waw.js"></script>
+    <script src="assets/js/plugins/isotop.js"></script>
+    <script src="assets/js/plugins/animation.js"></script>
+    <script src="assets/js/plugins/contact.form.js"></script>
+    <script src="assets/js/vendor/backtop.js"></script>
+    <script src="assets/js/plugins/text-type.js"></script>
+    <script src="assets/js/main.js"></script> 
+<style>
+  .service-card-user-image::before,
+  .service-card-user-image::after {
+    content: none !important;
+  }
+  .service-card-user-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .service-card-user-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+  }
+  .row.service-row {
+    align-items: center;
+  }
+</style>
+  </body>
+</html>
